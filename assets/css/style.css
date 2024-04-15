@@ -1,0 +1,10 @@
+
+/* Estilos del background */
+body {
+    background-image:url(../img/690.jpg);
+    background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
+    background-repeat: no-repeat; /* Evita que se repita la imagen */
+}
+
+/* Estilos boton */
+
