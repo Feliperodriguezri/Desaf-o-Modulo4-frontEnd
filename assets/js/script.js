@@ -1,3 +1,10 @@
+// Activacion tooltip
+
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+
+//fin tooltip
+
 function cargarGrafico(datos = [], name) {
     const chart = new CanvasJS.Chart("chartContainer", {
         animationEnabled: true,
@@ -57,20 +64,22 @@ function cargarCard(superHero){
 	$("#cardContainer").html(
 		`<div class="card mb-3 overflow-scroll" style="height: 300px; width: 100%;">
 		<div class="row g-0">
-		  <div class="col-md-4">
+		  <div class="col-4">
 			<img src="${superHero.image.url}" class="img-fluid rounded-start h-100 object-fit-cover" alt="...">
 		  </div>
-		  <div class="col-md-8">
+		  <div class="col-8">
 			<div class="card-body">
-			  <h5 class="card-title">${superHero.name}</h5>
-			  <h6 class="card-text">${superHero.biography["full-name"]}</h6>
-			  <p class="card-text">Alias: ${superHero.biography["aliases"]}</p>
-			  <p class="card-text">Primera Aparición ${superHero.biography["first-appearance"]}</p>
-			  <p class="card-text">Primera Publicación ${superHero.biography["publisher"]}</p>
-			  <p class="card-text">Ocupación: ${superHero.work["occupation"]}</p>
-			  <p class="card-text">Conexiones: ${superHero.connections["group-affiliation"]}</p>
-			  
-			</div>
+    <h5 class="card-title">${superHero.name}</h5>
+    <h6 class="card-text">${superHero.biography["full-name"]}</h6>
+	<div class="text-start">
+    <p class="card-text"><strong>Alias:</strong> ${superHero.biography["aliases"]}</p>
+    <p class="card-text"><strong>Primera Aparición:</strong> ${superHero.biography["first-appearance"]}</p>
+    <p class="card-text"><strong>Primera Publicación:</strong> ${superHero.biography["publisher"]}</p>
+    <p class="card-text"><strong>Ocupación:</strong> ${superHero.work["occupation"]}</p>
+    <p class="card-text"><strong>Conexiones:</strong> ${superHero.connections["group-affiliation"]}</p>
+	</div>
+</div>
+  
 		  </div>
 		</div>
 	  </div>`
